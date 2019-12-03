@@ -8,8 +8,13 @@ class NamesController < ApplicationController
         render json: Name.find(params[:id])
     end
 
-    def create
+    def new
 
     end
-    
+
+    def create(g)
+        Name.create(name: Name.create_from_API(g), gender: g)
+    end
+
 end
+
