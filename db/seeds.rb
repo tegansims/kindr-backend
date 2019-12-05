@@ -10,18 +10,16 @@ User.destroy_all
 Pick.destroy_all
 Group.destroy_all
 Name.destroy_all
-User_group.destroy_all
+UserGroup.destroy_all
 
 User.create(name:'tegan', email: 'tegan@tegan.com', password_digest: 'tegan')
 User.create(name:'bethan', email: 'bethan@bethan.com', password_digest: 'bethan')
 
 100.times do 
-    girl_name = Faker::Name.unique.female_first_name 
-    Name.create(name: girl_name, gender: "Female")
+    Name.create(name: Name.create_from_API('m'), gender: 'm')
     end
 
 100.times do 
-    boy_name = Faker::Name.unique.male_first_name 
-    Name.create(name: boy_name, gender: "Male")
+    Name.create(name: Name.create_from_API('f'), gender: 'f')
     end
 
