@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post 'names/random', to: 'names#random_name'
+  get '/random', to: 'names#random_name'
   
   resources :user_groups
   resources :picks
